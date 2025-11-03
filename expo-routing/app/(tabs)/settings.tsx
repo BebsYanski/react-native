@@ -1,12 +1,12 @@
 import React from "react";
 import { Text, View } from "react-native";
 
-const TabLayout = () => {
+const Settings = () => {
   return (
     <View>
-      <Text>TabLayout</Text>
+      <Text>Settings</Text>
     </View>
   );
 };
 
-export default TabLayout;
+export default Settings;
