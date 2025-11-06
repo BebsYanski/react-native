@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "todo-add-rn",
-    "slug": "todo-add-rn",
+    "name": "pokedex",
+    "slug": "pokedex",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
-    "scheme": "todoaddrn",
+    "scheme": "pokedex",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "ios": {
@@ -19,8 +19,7 @@
         "monochromeImage": "./assets/images/android-icon-monochrome.png"
       },
       "edgeToEdgeEnabled": true,
-      "predictiveBackGestureEnabled": false,
-      "package": "com.anonymous.todoaddrn"
+      "predictiveBackGestureEnabled": false
     },
     "web": {
       "output": "static",
