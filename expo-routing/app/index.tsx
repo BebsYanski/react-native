@@ -37,6 +37,7 @@ import {
   ActivityIndicator,
   FlatList,
   StyleSheet,
+  Text,
   TextInput,
   View,
 } from "react-native";
@@ -48,6 +49,25 @@ export default function HomeScreen() {
   const [page, setPage] = useState(1);
   const [loading, setLoading] = useState(false);
   const [hasMore, setHasMore] = useState(true);
+  const [posts, setPosts] = useState([]);
+  const [error, setError] = useState(null);
+
+  /*  useEffect(() => {
+    fetch("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => res.json())
+      .then((data) => setPosts(data))
+      .catch((err) => console.error(err));
+  }, []); */
+
+  /* useEffect(() => {
+    setTimeout(() => {
+      axios
+        .get("https://jsonplaceholder.typicode.com/posts")
+        .then((res) => setPosts(res.data))
+        .catch((err) => setError(err))
+        .finally(() => setLoading(false));
+    }, 5000);
+  }, []); */
 
   useEffect(() => {
     fetchUsers(true);
@@ -85,6 +105,14 @@ export default function HomeScreen() {
     setQuery(text.trim() || "react");
   };
 
+  // if (loading) {
+  //   return <ActivityIndicator size="large" color="blue" />;
+  // }
+
+  if (error) {
+    return <Text>Something went wrong...</Text>;
+  }
+
   return (
     <View style={styles.container}>
       <TextInput
@@ -107,6 +135,11 @@ export default function HomeScreen() {
           loading ? <ActivityIndicator size="large" color="blue" /> : null
         }
       />
+
+      {/*  <FlatList
+        data={posts}
+        renderItem={({ item }) => <PostCard post={item} />}
+      /> */}
     </View>
   );
 }
